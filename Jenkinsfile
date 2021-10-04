@@ -1,41 +1,21 @@
-pipeline 
-{
+pipeline{
     agent any
-
-    stages 
-    {
-        stage('Build') 
-        {
-            steps 
-            {
-                echo 'Build App'
+    stages{
+        stage ('build'){
+            steps{
+            echo 'I am build Stage...............'
             }
         }
-
-        stage('Test') 
-        {
-            steps 
-            {
-                echo 'Test App'
+        stage ('test'){
+            steps{
+            echo 'I am in test Stage...............'
             }
         }
-
-        stage('Deploy') 
-        {
-            steps 
-            {
-                echo 'Deploy App'
-            }
+         stage ('release'){
+             steps{
+            echo 'I am Staging...............'
+             }
         }
     }
+   
 
-    post
-    {
-
-    	always
-    	{
-    		emailext body: 'Summary', subject: 'Pipeline Status', to: 'vijaydocs100@gmail.com'
-    	}
-
-    }
-}
