@@ -1,7 +1,5 @@
 #!/usr/bin/groovy
-try{
-pipeline { 
-agent any 
+try{ 
     stages { 
         stage ('Checkout') { 
             steps{
@@ -49,7 +47,6 @@ agent any
             }
         }
     }
-}
  currentBuild.result = 'SUCCESS'
 }// end of the block
 catch (Exception err) {
