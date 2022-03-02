@@ -50,8 +50,6 @@ agent any
         }
  currentBuild.result = 'SUCCESS'
 }// end of the try block
-}
-}
 catch (Exception err) {
     echo 'This will run only if failed'
 if (currentBuild.rawBuild.getActions(jenkins.model.InterruptedBuildAction.class).isEmpty()) {
@@ -60,6 +58,8 @@ if (currentBuild.rawBuild.getActions(jenkins.model.InterruptedBuildAction.class)
 }
 else {
         currentBuild.result = 'ABORTED'
+}
+}
 }
 }
 finally {
