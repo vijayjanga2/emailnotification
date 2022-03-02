@@ -49,7 +49,9 @@ agent any
             }
         }
  currentBuild.result = 'SUCCESS'
-}// end of the block
+}// end of the try block
+}
+}
 catch (Exception err) {
     echo 'This will run only if failed'
 if (currentBuild.rawBuild.getActions(jenkins.model.InterruptedBuildAction.class).isEmpty()) {
@@ -80,4 +82,3 @@ finally {
     echo "No mail will be sent"
     }
 } // end of finally block
-}}
