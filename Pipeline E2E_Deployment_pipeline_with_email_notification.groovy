@@ -61,7 +61,6 @@ else {
 }
 }
 }
-}
 finally {
     echo "Email enbled is : ${params.SEND_EMAIL}"
     color = (currentBuild.result == "SUCCESS") ? "MediumSeaGreen" : "Tomato"
@@ -82,3 +81,4 @@ finally {
     echo "No mail will be sent"
     }
 } // end of finally block
+}
