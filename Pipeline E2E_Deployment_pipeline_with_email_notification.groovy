@@ -1,8 +1,6 @@
 #!/usr/bin/groovy
-pipeline { 
-agent any 
-    stages { 
-	    try{
+try{
+node{ 
         stage ('Checkout') { 
             steps{
 			git 'https://github.com/vijayjanga9/maven-war.git'
@@ -48,6 +46,7 @@ agent any
                 echo 'Monitoring'
             }
         }
+	}
  currentBuild.result = 'SUCCESS'
 }// end of the try block
 catch (Exception err) {
@@ -82,5 +81,3 @@ finally {
     echo "No mail will be sent"
     }
 } // end of finally block
-}
-}
