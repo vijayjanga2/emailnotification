@@ -2,19 +2,13 @@
 try{
 node{ 
         stage ('Checkout') { 
-            steps{
 			git 'https://github.com/vijayjanga9/maven-war.git'
-				}
          }
 		stage ('Compile') { 
-            steps{
         sh "mvn clean"
-            }
          }
 		stage ('Build') { 
-            steps{
         sh "mvn package"
-            }
          } 
         stage ('Test') { 
             steps{
