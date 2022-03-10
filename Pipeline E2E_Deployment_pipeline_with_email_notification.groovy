@@ -2,21 +2,21 @@
 try{
 node{ 
         stage ('Checkout') { 
-			git 'https://github.com/vijayjanga9/maven-war.git'
+		git 'https://github.com/vijayjanga9/maven-war.git'
          }
-		stage ('Compile') { 
-        sh "mvn clean"
+	stage ('Compile') { 
+        	sh "mvn clean"
          }
-		stage ('Build') { 
-        sh "mvn package"
+	stage ('Build') { 
+        	sh "mvn package"
          } 
         stage ('Test') { 
-        sh "mvn test"        
+        	sh "mvn test"        
         }
-		stage ('Function Test') { 
+	stage ('Function Test') { 
                 echo 'functional testing'
          }
-		stage ('Security Scan') { 
+	stage ('Security Scan') { 
                 echo 'Scanning'
          } 
         stage ('QA') { 
