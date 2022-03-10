@@ -11,34 +11,22 @@ node{
         sh "mvn package"
          } 
         stage ('Test') { 
-            steps{
         sh "mvn test"        
-            }
         }
 		stage ('Function Test') { 
-            steps{
                 echo 'functional testing'
-            }
          }
 		stage ('Security Scan') { 
-            steps{
                 echo 'Scanning'
-            }
          } 
         stage ('QA') { 
-            steps{
                 echo 'Quality analysis'
-            }
         }
         stage ('Deploy') { 
-            steps{
                 echo 'Deploying'
-            }
         }
         stage ('Monitor') {
-            steps{
                 echo 'Monitoring'
-            }
         }
 	}
  currentBuild.result = 'SUCCESS'
